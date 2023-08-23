@@ -7,10 +7,10 @@ const cors = require("cors");
 // };
 
 const app = express();
+app.use(cors());
 const examRouter = require("./routes/examRouter.js");
 app.use(express.json());
 app.use("/exam", examRouter);
-app.use(cors());
 // app.use(function (req, res, next) {
 //   //Enabling CORS
 //   res.header("Access-Control-Allow-Origin", "*");
