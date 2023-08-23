@@ -1,16 +1,16 @@
 const express = require("express");
 const cors = require("cors");
-const corsOptions = {
-  origin: "https://main--gilded-moxie-0722a8.netlify.app/",
-  credentials: true, //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
-};
+// const corsOptions = {
+//   origin: "https://main--gilded-moxie-0722a8.netlify.app/",
+//   credentials: true, //access-control-allow-credentials:true
+//   optionSuccessStatus: 200,
+// };
 
 const app = express();
 const examRouter = require("./routes/examRouter.js");
 app.use(express.json());
 app.use("/exam", examRouter);
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(function (req, res, next) {
   //Enabling CORS
   res.header("Access-Control-Allow-Origin", "*");
